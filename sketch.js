@@ -10,9 +10,18 @@ const sketch = () => {
     context.fillRect(0, 0, width, height);
     context.beginPath();
 
-    context.arc(width / 2, height / 2, 300, 0, Math.PI * 2, false);
+    //Math.PI/2 = half circle, (1st,2nd arg = canvas relative position,
+    //3rd argument diamiter 4th, =  clip  + a very rough golden ratio 1.161
+
+    context.arc(width / 2, height / 2, 500 / 1.161, 0, Math.PI * 2, false);
+
+    //Fill / Stroke - Stroke for spectral analysis
+
     context.fillStyle = "red";
     context.fill();
+    context.lineWidth = 60 / 1.161;
+    context.strokeStyle = "purple";
+    context.stroke();
   };
 };
 
